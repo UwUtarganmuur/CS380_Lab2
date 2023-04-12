@@ -1,9 +1,16 @@
 package cs380_lab2;
 
+/**
+ * Class represents a node in a BST
+ */
 class Node{
 	   int value;
 	   Node left, right;
 	   
+	   /**
+	     * Constructor for Node class
+	     * @param value The value of the node
+	     */
 	   public Node(int value){
 	      this.value = value;
 	      left = null;
@@ -11,22 +18,26 @@ class Node{
 	   }
 
 	}
-
+/**
+ * BST class
+ */
 class BinarySearchTree{
 
 	   Node root;
 	   
 	   
-	   /*
-	   recursive insert method
-	   */
+	   /**
+	     * Inserting values into the Binary Search Tree using a recursive method
+	     * @param root The root of the BST
+	     * @param value The value to insert
+	     * @return root The root of BST after insertion
+	     */
 	   public Node insert(Node root, int value){
 	      //base case
 	      if(root == null){
 	         root = new Node(value);
 	         return root;
 	      }
-	      
 	      //recursive step
 	      if(value < root.value){
 	         root.left = insert(root.left, value); 
@@ -39,9 +50,10 @@ class BinarySearchTree{
 	   
 	   
 	   
-	   /*
-	   pre-order traversal
-	   */
+	   /**
+	     * Pre-order traversal of BST
+	     * @param root The root of the BST
+	     */
 	   public void preOrderTraversal(Node root){
 	      //implement me
 	        if (root != null) {
@@ -53,10 +65,10 @@ class BinarySearchTree{
 	   }
 
 	   
-	   
-	   /*
-	   in-order traversal
-	   */
+	   /**
+	     * Pre-order traversal of BST
+	     * @param root The root of the BST
+	     */
 	   public void inOrderTraversal(Node root){
 	      //implement me
 		   if (root != null) {
@@ -68,9 +80,10 @@ class BinarySearchTree{
 	   
 	   
 	   
-	   /*
-	   post-order traversal
-	   */
+	   /**
+	     * Post-order traversal of BST
+	     * @param root The root of the BST
+	     */
 	   public void postOrderTraversal(Node root){
 	      //implement me
 	        if (root != null) {
@@ -82,10 +95,12 @@ class BinarySearchTree{
 	   }
 	   
 	   
-	   /*
-	   a method to find the node in the tree
-	   with a specific value
-	   */
+	   /**
+	     * Find a specific value node in BST
+	     * @param root The root of the BST
+	     * @param key Search the value
+	     * @return true if the value is found
+	     */
 	   public boolean find(Node root, int key){
 		  //implement me
 	        if (root == null) {
@@ -102,10 +117,12 @@ class BinarySearchTree{
 	   
 	   
 	   
-	   /*
-	   a method to find the node in the tree
-	   with a smallest key
-	   */
+	   /**
+	     * Find the smallest key node in BST
+	     * @param root The root of BST
+	     * @return The smallest key value 
+	     * @throws IllegalArgumentException if BST is empty
+	     */
 	   public int getMin(Node root){
 	      //implement me
 		   if (root == null) {
@@ -119,10 +136,12 @@ class BinarySearchTree{
 	  
 	  
 	  
-	   /*
-	   a method to find the node in the tree
-	   with a largest key
-	   */
+	   /**
+	     * Find the largest key node BST
+	     * @param root The root of BST
+	     * @return The largest key value 
+	     * @throws IllegalArgumentException if BST is empty
+	     */
 	   public int getMax(Node root){
 		  //implement me
 		   if (root == null) {
@@ -134,9 +153,11 @@ class BinarySearchTree{
 	        }
 	   }
 
-    /*
-     * inserts a node into the tree
-     */
+	   /**
+	     * Inserts a node with the given value into the tree
+	     *
+	     * @param value Inserts the value
+	     */
     public void insert(int value) {
         // tree is empty
         if (root == null) {
@@ -167,10 +188,13 @@ class BinarySearchTree{
         }
     }
 	   
-	   /*
-	   this method will not compile until getMax
-	   is implemented
-	   */
+    /**
+     * Deletes a node with the given key
+     *
+     * @param root The root of the subtree to delete from
+     * @param key  Deletes key of the node
+     * @return Updates root of the subtree
+     */
 	   public Node delete(Node root, int key){
 	      
 	      if(root == null){
@@ -204,8 +228,14 @@ class BinarySearchTree{
 	}
 
 
-
+    /**
+     * Demo class for testing the BinarySearchTree class
+     */
 	public class TreeDemo{
+		 /**
+	     * Shows BST operations
+	     * @param args the command line arguments
+	     */
 	   public static void main(String[] args){
 	      BinarySearchTree t1  = new BinarySearchTree();
 	      t1.insert(24);
