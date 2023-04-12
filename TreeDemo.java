@@ -125,6 +125,13 @@ class BinarySearchTree{
 	   */
 	   public int getMax(Node root){
 		  //implement me
+		   if (root == null) {
+	            throw new IllegalArgumentException("Tree is empty");
+	        } else if (root.right == null) {
+	            return root.value;
+	        } else {
+	            return getMax(root.right);
+	        }
 	   }
 
     /*
