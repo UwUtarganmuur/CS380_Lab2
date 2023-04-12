@@ -44,6 +44,12 @@ class BinarySearchTree{
 	   */
 	   public void preOrderTraversal(Node root){
 	      //implement me
+	        if (root != null) {
+	            System.out.print(root.value + " ");
+	            preOrderTraversal(root.left);
+	            preOrderTraversal(root.right);
+	        }
+	    
 	   }
 
 	   
@@ -53,6 +59,11 @@ class BinarySearchTree{
 	   */
 	   public void inOrderTraversal(Node root){
 	      //implement me
+		   if (root != null) {
+	            inOrderTraversal(root.left);
+	            System.out.print(root.value + " ");
+	            inOrderTraversal(root.right);
+	        }		   
 	   }
 	   
 	   
