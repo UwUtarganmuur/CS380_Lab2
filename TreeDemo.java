@@ -108,6 +108,13 @@ class BinarySearchTree{
 	   */
 	   public int getMin(Node root){
 	      //implement me
+		   if (root == null) {
+	            throw new IllegalArgumentException("Tree is empty");
+	        } else if (root.left == null) {
+	            return root.value;
+	        } else {
+	            return getMin(root.left);
+	        }
 	   }
 	  
 	  
